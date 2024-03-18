@@ -2,15 +2,6 @@ local func = require "func"
 
 -- Commands in Visual mode
 local commands = { {
-    key = "n",
-    commands = { "editor.action.addSelectionToNextFindMatch" }
-}, {
-    key = "N",
-    commands = { "editor.action.addSelectionToPreviousFindMatch" }
-}, {
-    key = "L",
-    commands = { "editor.action.selectHighlights" }
-}, {
     key = "u",
     commands = { "cursorUndo" }
 } }

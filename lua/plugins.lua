@@ -1,6 +1,14 @@
 local plugins = {
-    "justinmk/vim-sneak",
-    "tpope/vim-surround",
+    {
+        "justinmk/vim-sneak",
+        event = 'VeryLazy',
+        cond = not not vim.g.vscode,
+    },
+    {
+        "tpope/vim-surround",
+        event = 'VeryLazy',
+        cond = not not vim.g.vscode,
+    },
     {
         'vscode-neovim/vscode-multi-cursor.nvim',
         event = 'VeryLazy',

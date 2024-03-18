@@ -1,8 +1,9 @@
 -- imports
 require('plugins')
 require('leader')
-require('black-hole')
 require('normal-mode')
 require('visual-mode')
-require('sneak')
+require('config.black-hole')
+require('config.sneak')
 require('config.custom')
+require('config.multi-cursor')
