@@ -1,17 +1,7 @@
 -- imports
 require('leader')
 require('normal-mode')
-
--- Load vscode
-local vim = vim
-local vscode = require("vscode-neovim")
-local Plug = vim.fn['plug#']
-
--- Plugins
-
-vim.call('plug#begin')
-Plug('justinmk/vim-sneak')
-vim.call('plug#end')
+require('plugins')
 
 
 
@@ -80,34 +70,3 @@ vim.opt.ignorecase = true
 
 -- disable "ignorecase" option if the search pattern contains upper case characters
 vim.opt.smartcase = true
-
--- Functions definition start
-local function vscode_action_func(nvim_key, vscode_commands, mode)
-    mode = mode or "n"
-    vim.api.nvim_set_keymap(mode, nvim_key, "", {
-        noremap = true,
-        silent = true,
-        callback = function()
-            if type(vscode_commands) == "string" then
-                vscode_commands = { vscode_commands }
-            end
-            for _, command in ipairs(vscode_commands) do
-                vscode.action(command)
-            end
-        end
-    })
-end
-
-local function key_remapping_func(before_key, after_key, mode)
-    mode = mode or "n"
-    vim.keymap.set(mode, before_key, after_key, { silent = true, noremap = true })
-end
-
--- Functions definition end
-
--- Function call start
-for _, mapping in ipairs(normal_mode_commands) do
-    vscode_action_func(mapping.key, mapping.commands)
-end
-
--- Function call end
