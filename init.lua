@@ -1,3 +1,7 @@
+-- imports
+require('leader')
+require('normal-mode')
+
 -- Load vscode
 local vim = vim
 local vscode = require("vscode-neovim")
@@ -10,58 +14,6 @@ Plug('justinmk/vim-sneak')
 vim.call('plug#end')
 
 
--- <leader> key
-vim.g.mapleader = " "
-
--- Leader key mappings for normal mode
-local leader_normal_mappings = { {
-    key = "<leader>e",
-    commands = { "workbench.view.explorer" }
-}, {
-    key = "<leader>a",
-    commands = { "workbench.action.toggleActivityBarVisibility" }
-}, {
-    key = "<leader>z",
-    commands = { "workbench.action.toggleZenMode" }
-}, {
-    key = "<leader>g",
-    commands = { "workbench.view.scm" }
-}, {
-    key = "<leader>x",
-    commands = { "workbench.view.extensions" }
-}, {
-    key = "<leader>t",
-    commands = { "workbench.view.extension.todo-tree-container" }
-}, {
-    key = "<leader>q",
-    commands = { "workbench.action.closeActiveEditor" }
-}, {
-    key = "<leader>c",
-    commands = { "gitlens.views.commits.focus" }
-}, {
-    key = "<leader>Q",
-    commands = { "workbench.action.closeAllEditors" }
-} }
-
-local normal_mode_commands = { {
-    key = "L",
-    commands = { "workbench.action.nextEditorInGroup" }
-}, {
-    key = "H",
-    commands = { "workbench.action.previousEditorInGroup" }
-}, {
-    key = "gi",
-    commands = { "editor.action.peekImplementation" }
-}, {
-    key = "gq",
-    commands = { "editor.action.quickFix" }
-}, {
-    key = "gt",
-    commands = { "editor.action.peekTypeDefinition" }
-}, {
-    key = "z",
-    commands = "editor.toggleFold"
-} }
 
 
 local visual_mode_commands = { {
@@ -79,20 +31,6 @@ local visual_mode_commands = { {
 } }
 
 
--- Remapping in Normal mode
-local normal_mode_remappings = { {
-    before = "J",
-    after = "<S-l>"
-}, {
-    before = "K",
-    after = "<S-h>"
-}, {
-    before = "<CR>",
-    after = "bea"
-}, {
-    before = "<BS>",
-    after = "ciw"
-}, }
 
 -- Redirect 'd' and 'c' operations to the black hole register
 vim.api.nvim_set_keymap("n", "d", '"_d', {
@@ -168,15 +106,8 @@ end
 -- Functions definition end
 
 -- Function call start
-for _, mapping in ipairs(leader_normal_mappings) do
-    vscode_action_func(mapping.key, mapping.commands)
-end
-
 for _, mapping in ipairs(normal_mode_commands) do
     vscode_action_func(mapping.key, mapping.commands)
 end
 
-for _, mapping in ipairs(normal_mode_remappings) do
-    key_remapping_func(mapping.before, mapping.after)
-end
 -- Function call end
