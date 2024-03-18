@@ -6,7 +6,7 @@ Welcome to my Neovim configuration repository! This configuration is designed to
 
 - **Modular Configuration:** Organized into separate Lua files for clarity and ease of management.
 - **Custom Key Mappings:** Intuitive leader key mappings and shortcuts to speed up common tasks.
-- **Plugin Management:** Utilizes [vim-plug](https://github.com/junegunn/vim-plug) for efficient plugin management.
+- **Plugin Management:** Utilizes [lazy.nvim](https://github.com/folke/lazy.nvim) for efficient plugin management.
 
 ## Tree
 

@@ -1,13 +1,25 @@
--- Load vscode
-local vim = vim
-local Plug = vim.fn['plug#']
+local plugins = {
+    "justinmk/vim-sneak",
+    "tpope/vim-surround",
+    {
+        'vscode-neovim/vscode-multi-cursor.nvim',
+        event = 'VeryLazy',
+        cond = not not vim.g.vscode,
+        opts = {},
+    }
+}
 
-vim.call('plug#begin')
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
+end
+vim.opt.rtp:prepend(lazypath)
 
--- Plugin start
-
-Plug('justinmk/vim-sneak')
-
--- Plugin end
-
-vim.call('plug#end')
+require("lazy").setup(plugins)

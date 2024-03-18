@@ -38,6 +38,9 @@ local mappings = { {
 }, {
     before = "r",
     after = "<C-r>"
+}, {
+    before = "<Esc>",
+    after = ":nohlsearch<cr>"
 } }
 
 -- Function call for setting up mappings
