@@ -35,7 +35,10 @@ local mappings = { {
 }, {
     before = "<BS>",
     after = "ciw"
-}, }
+}, {
+    before = "r",
+    after = "<C-r>"
+} }
 
 -- Function call for setting up mappings
 for _, mapping in ipairs(commands) do
