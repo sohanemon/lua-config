@@ -1,7 +1,9 @@
 -- Sneak remap
-vim.keymap.set("n", "s", "cl", { noremap = true })
-vim.keymap.set("n", "S", "dl", { noremap = true })
-vim.keymap.set("n", "f", "<Plug>Sneak_s", { noremap = true })
-vim.keymap.set("n", "F", "<Plug>Sneak_S", { noremap = true })
-vim.keymap.set("n", "t", "<Plug>Sneak_t", { noremap = true })
-vim.keymap.set("n", "T", "<Plug>Sneak_T", { noremap = true })
+local k = vim.keymap.set
+
+k("n", "s", "cl", { noremap = true })
+k("n", "S", "dl", { noremap = true })
+k("n", "f", "<Plug>Sneak_s", { noremap = true })
+k("n", "F", "<Plug>Sneak_S", { noremap = true })
+k("n", "t", "<Plug>Sneak_t", { noremap = true })
+k("n", "T", "<Plug>Sneak_T", { noremap = true })
