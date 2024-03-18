@@ -8,6 +8,23 @@ Welcome to my Neovim configuration repository! This configuration is designed to
 - **Custom Key Mappings:** Intuitive leader key mappings and shortcuts to speed up common tasks.
 - **Plugin Management:** Utilizes [vim-plug](https://github.com/junegunn/vim-plug) for efficient plugin management.
 
+## Tree
+
+.
+├── init.lua
+├── lua
+│   ├── black-hole.lua
+│   ├── config
+│   │   └── custom.lua
+│   ├── func.lua
+│   ├── leader.lua
+│   ├── normal-mode.lua
+│   ├── plugins.lua
+│   ├── sneak.lua
+│   └── visual-mode.lua
+└── readme.md
+
+
 ## Installation
 
 To use this Neovim configuration, ensure you have Neovim (0.5 or newer) installed. Then, follow these steps:
