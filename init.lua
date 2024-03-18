@@ -14,73 +14,73 @@ vim.call('plug#end')
 vim.g.mapleader = " "
 
 -- Leader key mappings for normal mode
-local leader_normal_mappings = {{
+local leader_normal_mappings = { {
     key = "<leader>e",
-    commands = {"workbench.view.explorer"}
+    commands = { "workbench.view.explorer" }
 }, {
     key = "<leader>a",
-    commands = {"workbench.action.toggleActivityBarVisibility"}
+    commands = { "workbench.action.toggleActivityBarVisibility" }
 }, {
     key = "<leader>z",
-    commands = {"workbench.action.toggleZenMode"}
+    commands = { "workbench.action.toggleZenMode" }
 }, {
     key = "<leader>g",
-    commands = {"workbench.view.scm"}
+    commands = { "workbench.view.scm" }
 }, {
     key = "<leader>x",
-    commands = {"workbench.view.extensions"}
+    commands = { "workbench.view.extensions" }
 }, {
     key = "<leader>t",
-    commands = {"workbench.view.extension.todo-tree-container"}
+    commands = { "workbench.view.extension.todo-tree-container" }
 }, {
     key = "<leader>q",
-    commands = {"workbench.action.closeActiveEditor"}
+    commands = { "workbench.action.closeActiveEditor" }
 }, {
     key = "<leader>c",
-    commands = {"gitlens.views.commits.focus"}
-},{
+    commands = { "gitlens.views.commits.focus" }
+}, {
     key = "<leader>Q",
-    commands = {"workbench.action.closeAllEditors"}
-}}
+    commands = { "workbench.action.closeAllEditors" }
+} }
 
-local normal_mode_commands = {{
+local normal_mode_commands = { {
     key = "L",
-    commands = {"workbench.action.nextEditorInGroup"}
+    commands = { "workbench.action.nextEditorInGroup" }
 }, {
     key = "H",
-    commands = {"workbench.action.previousEditorInGroup"}
+    commands = { "workbench.action.previousEditorInGroup" }
 }, {
     key = "gi",
-    commands = {"editor.action.peekImplementation"}
+    commands = { "editor.action.peekImplementation" }
 }, {
     key = "gq",
-    commands = {"editor.action.quickFix"}
+    commands = { "editor.action.quickFix" }
 }, {
     key = "gt",
-    commands = {"editor.action.peekTypeDefinition"}
-},{
-    key= "z",
+    commands = { "editor.action.peekTypeDefinition" }
+}, {
+    key = "z",
     commands = "editor.toggleFold"
-}}
+} }
 
 
-local visual_mode_commands = {{
+local visual_mode_commands = { {
     key = "n",
-    commands = {"editor.action.addSelectionToNextFindMatch"}
+    commands = { "editor.action.addSelectionToNextFindMatch" }
 }, {
     key = "N",
-    commands = {"editor.action.addSelectionToPreviousFindMatch"}
+    commands = { "editor.action.addSelectionToPreviousFindMatch" }
 }, {
     key = "L",
-    commands = {"editor.action.selectHighlights"}
+    commands = { "editor.action.selectHighlights" }
 }, {
     key = "u",
-    commands = {"cursorUndo"}
-}}
+    commands = { "cursorUndo" }
+} }
 
 
 -- Remapping in Normal mode
-local normal_mode_remappings = {{
+local normal_mode_remappings = { {
     before = "J",
     after = "<S-l>"
 }, {
@@ -92,10 +92,7 @@ local normal_mode_remappings = {{
 }, {
     before = "<BS>",
     after = "ciw"
-}, {
-    before = "b",
-    after = "w"
-}}
+}, }
 
 -- Redirect 'd' and 'c' operations to the black hole register
 vim.api.nvim_set_keymap("n", "d", '"_d', {
@@ -109,7 +106,7 @@ vim.api.nvim_set_keymap("v", "d", '"_d', {
 })
 vim.api.nvim_set_keymap("v", "c", '"_c', { noremap = true })
 vim.api.nvim_set_keymap("n", "c", '"_c', { noremap = true })
- vim.api.nvim_set_keymap("n", "C", '"_C', {
+vim.api.nvim_set_keymap("n", "C", '"_C', {
     noremap = true
 })
 
@@ -154,7 +151,7 @@ local function vscode_action_func(nvim_key, vscode_commands, mode)
         silent = true,
         callback = function()
             if type(vscode_commands) == "string" then
-                vscode_commands = {vscode_commands}
+                vscode_commands = { vscode_commands }
             end
             for _, command in ipairs(vscode_commands) do
                 vscode.action(command)
@@ -165,7 +162,7 @@ end
 
 local function key_remapping_func(before_key, after_key, mode)
     mode = mode or "n"
-    vim.keymap.set(mode, before_key, after_key, {silent = true, noremap = true})
+    vim.keymap.set(mode, before_key, after_key, { silent = true, noremap = true })
 end
 
 -- Functions definition end
