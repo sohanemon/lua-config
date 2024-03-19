@@ -1,5 +1,9 @@
+-- ignore case
+vim.cmd [[let g:sneak#use_ic_scs = 1]]
+
 -- Sneak remap
 local k = vim.keymap.set
+
 
 k("n", "s", "cl", { noremap = true })
 k("n", "S", "dl", { noremap = true })
