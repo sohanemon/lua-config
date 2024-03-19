@@ -53,7 +53,7 @@ local mappings = {
     },
     {
         before = "<BS>",
-        after = "ciw"
+        after = '"_ciw'
     },
     {
         before = "r",
