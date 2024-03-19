@@ -5,6 +5,11 @@ local plugins = {
         cond = not not vim.g.vscode,
     },
     {
+        "wellle/targets.vim",
+        event = 'VeryLazy',
+        cond = not not vim.g.vscode,
+    },
+    {
         "tpope/vim-repeat",
         event = 'VeryLazy',
         cond = not not vim.g.vscode,
