@@ -1,6 +1,7 @@
 -- imports
 require('plugins')
 require('leader')
+require('config.movement')
 require('normal-mode')
 require('visual-mode')
 require('config.black-hole')
