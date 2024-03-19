@@ -20,7 +20,15 @@ local mappings = {
     },
     {
         before = "x", after = "d"
-    }
+    },
+    {
+        before = "J",
+        after = "<S-l>"
+    },
+    {
+        before = "K",
+        after = "<S-h>"
+    },
 }
 
 -- Function call for setting up mappings
