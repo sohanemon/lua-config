@@ -1,49 +1,49 @@
 local func = require "func"
--- <leader> key
+-- leader key
 vim.g.mapleader = " "
 
 -- Leader key mappings for normal mode
 local leader_normal_mappings = { {
-    key = "<leader>e",
+    key = "e",
     commands = { "workbench.view.explorer" }
 }, {
-    key = "<leader>a",
+    key = "a",
     commands = { "workbench.action.toggleActivityBarVisibility" }
 }, {
-    key = "<leader>z",
+    key = "z",
     commands = { "workbench.action.toggleZenMode" }
 },
     {
-        key = "<leader>f",
+        key = "f",
         commands = {
             "workbench.action.findInFiles"
         }
     },
     {
-        key = "<leader>g",
+        key = "g",
         commands = { "workbench.view.scm" }
     }, {
-    key = "<leader>x",
+    key = "x",
     commands = { "workbench.view.extensions" }
 }, {
-    key = "<leader>t",
+    key = "t",
     commands = { "workbench.view.extension.todo-tree-container" }
 }, {
-    key = "<leader>q",
+    key = "q",
     commands = { "workbench.action.closeActiveEditor" }
 }, {
-    key = "<leader>Q",
+    key = "Q",
     commands = { "workbench.action.closeAllEditors" }
 },
     {
-        key = "<leader><leader>n",
+        key = "n",
         commands = { "gitlens.diffWithPreviousInDiffLeft" }
     },
     {
-        key = "<leader><leader>N",
+        key = "N",
         commands = { "gitlens.diffWithNextInDiffLeft" }
     }, {
-    key = "<leader><leader>c",
+    key = "c",
     commands = { "gitlens.views.commits.focus" }
 }
 }
@@ -52,9 +52,9 @@ local leader_normal_mappings = { {
 
 -- Function call for setting up mappings
 for _, mapping in ipairs(leader_normal_mappings) do
-    func.vscode_action(mapping.key, mapping.commands)
+    func.vscode_action("<leader><leader>" .. mapping.key, mapping.commands)
 end
 
 for _, mapping in ipairs(leader_normal_mappings) do
-    func.vscode_action(mapping.key, mapping.commands, "x")
+    func.vscode_action("<leader><leader>" .. mapping.key, mapping.commands, "x")
 end
