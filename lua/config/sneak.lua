@@ -5,8 +5,8 @@ vim.cmd [[let g:sneak#use_ic_scs = 1]]
 local k = vim.keymap.set
 
 
-k("n", "s", "cl", { noremap = true })
-k("n", "S", "dl", { noremap = true })
+k("n", "s", '"_cl', { noremap = true })
+k("n", "S", '"_dl', { noremap = true })
 k("n", "/", "<Plug>Sneak_s", { noremap = true })
 k("n", "?", "<Plug>Sneak_S", { noremap = true })
 k("n", "f", "<Plug>Sneak_f", { noremap = true })

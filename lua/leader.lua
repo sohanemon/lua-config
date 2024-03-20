@@ -14,7 +14,7 @@ local leader_normal_mappings = { {
     commands = { "workbench.action.toggleZenMode" }
 },
     {
-        key = "f",
+        key = "s",
         commands = {
             "workbench.action.findInFiles"
         }
@@ -52,9 +52,9 @@ local leader_normal_mappings = { {
 
 -- Function call for setting up mappings
 for _, mapping in ipairs(leader_normal_mappings) do
-    func.vscode_action("<leader><leader>" .. mapping.key, mapping.commands)
+    func.vscode_action("<leader>" .. mapping.key, mapping.commands)
 end
 
 for _, mapping in ipairs(leader_normal_mappings) do
-    func.vscode_action("<leader><leader>" .. mapping.key, mapping.commands, "x")
+    func.vscode_action("<leader>" .. mapping.key, mapping.commands, "x")
 end

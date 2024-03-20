@@ -3,6 +3,14 @@ local func = require "func"
 -- Commands in Visual mode
 local commands = {
     {
+        key = "L",
+        commands = { "workbench.action.nextEditorInGroup" }
+    },
+    {
+        key = "H",
+        commands = { "workbench.action.previousEditorInGroup" }
+    },
+    {
         key = "u",
         commands = { "cursorUndo" }
     },

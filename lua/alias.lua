@@ -12,5 +12,5 @@ local mappings = {
 -- Function call for setting up mappings
 
 for _, mapping in ipairs(mappings) do
-    func.key_remapping("<leader>" .. mapping.before, mapping.after)
+    func.key_remapping("<leader><leader>" .. mapping.before, mapping.after)
 end
