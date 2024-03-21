@@ -1,5 +1,3 @@
-vim.cmd("nmap <leader>nvim :!code ~/.config/nvim<cr>")
-
 -- sync system clipboard
 -- xclip must be installed `apt install xclip`
 vim.opt.clipboard = "unnamedplus"
