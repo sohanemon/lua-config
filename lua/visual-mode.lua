@@ -30,6 +30,9 @@ local mappings = {
         before = "x", after = "d"
     },
     {
+        before = "s", after = '"_c'
+    },
+    {
         before = "J",
         after = "<S-l>"
     },

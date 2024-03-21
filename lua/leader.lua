@@ -33,7 +33,7 @@ local leader_normal_mappings = { {
     commands = { "workbench.action.closeActiveEditor" }
 }, {
     key = "Q",
-    commands = { "workbench.action.closeAllEditors" }
+    commands = { "workbench.action.closeEditorsInGroup" }
 },
     {
         key = "n",
