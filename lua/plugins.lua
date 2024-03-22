@@ -24,7 +24,7 @@ local plugins = {
         event = 'VeryLazy',
         cond = not not vim.g.vscode,
         opts = {},
-    }
+    },
 }
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

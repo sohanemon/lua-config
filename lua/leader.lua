@@ -2,7 +2,7 @@ local func = require "func"
 -- leader key
 vim.g.mapleader = " "
 
-vim.cmd("nmap <leader>nvim :!code ~/.config/vscodevim<cr>")
+vim.cmd("nmap <leader>nvim :!code ~/.config/nvim<cr>")
 
 -- Leader key mappings for normal mode
 local leader_normal_mappings = { {
