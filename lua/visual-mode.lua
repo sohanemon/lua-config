@@ -40,7 +40,16 @@ local mappings = {
         before = "K",
         after = "<S-h>"
     },
+    {
+        before="0",
+        after="g0"
+    },
+    {
+        before="$",
+        after="g$"
+    }
 }
+
 
 -- Function call for setting up mappings
 for _, mapping in ipairs(commands) do
